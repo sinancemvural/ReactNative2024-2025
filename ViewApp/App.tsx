@@ -1,10 +1,13 @@
 
-import { SafeAreaView, View ,Text, Image,Button,Alert} from 'react-native';
+import { useState } from 'react';
+import { SafeAreaView, View ,Text, Image,Button,Alert, TextInput} from 'react-native';
 
 export default function App() {
+
   return (
+  
     <SafeAreaView style={{flex:1,backgroundColor:'#FAF7F0',flexDirection:'row'}}>
-      <View style={{flex:1,backgroundColor:'#F5EFFF',alignItems:'center',justifyContent:'space-between'}}>
+     <View style={{flex:1,backgroundColor:'#F5EFFF',alignItems:'center',justifyContent:'space-between'}}>
         <Text style={{backgroundColor:'white'}}>Oyuncu Kadrosu</Text>
         <Text>Gizem Örge</Text>
         <Text>Cansu Özbay</Text>
@@ -36,7 +39,7 @@ export default function App() {
         </View>
       </View>
     </SafeAreaView>
-   /* <View style={{flex:1}}>
+    /*<View style={{flex:1}}>
       <View style={{flex:1,backgroundColor:'#FAF7F0'}}></View>
       <View style={{flex:1,flexDirection:'row'}}>
           <View style={{flex:1,backgroundColor:'#E5D9F2'}}></View>
