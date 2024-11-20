@@ -2,6 +2,10 @@
 import { useState } from 'react';
 import { SafeAreaView, View ,Text, Image,Button,Alert, TextInput,StyleSheet, TouchableOpacity} from 'react-native';
 
+const  deneme=(value:number)=>{
+  return (value+10);
+}
+
 export default function App() {
   let randomSayi=Math.floor(Math.random()*100);
   const[sayiBir,setSayiBir]=useState();
@@ -27,6 +31,7 @@ export default function App() {
         <Text style={styles.karakter}>/</Text>
       </TouchableOpacity>
       <Text>Rastgele Sayi:{randomSayi}</Text>
+      <View><Text>{deneme(5)}</Text></View>
     </SafeAreaView>
   );
 }
