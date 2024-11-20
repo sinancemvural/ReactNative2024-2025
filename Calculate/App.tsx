@@ -5,7 +5,12 @@ import { SafeAreaView, View ,Text, Image,Button,Alert, TextInput,StyleSheet, Tou
 const  deneme=(value:number)=>{
   return (value+10);
 }
+const kosullar=(value:number)=>{
+  let sonuc;
+  value<0 ? sonuc='negatif' : sonuc='pozitif' ;
 
+  return sonuc;
+}
 export default function App() {
   let randomSayi=Math.floor(Math.random()*100);
   const[sayiBir,setSayiBir]=useState();
@@ -32,6 +37,7 @@ export default function App() {
       </TouchableOpacity>
       <Text>Rastgele Sayi:{randomSayi}</Text>
       <View><Text>{deneme(5)}</Text></View>
+      <View><Text>{kosullar(-3)}</Text></View>
     </SafeAreaView>
   );
 }
