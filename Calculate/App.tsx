@@ -11,10 +11,18 @@ const kosullar=(value:number)=>{
 
   return sonuc;
 }
+
+
 export default function App() {
   let randomSayi=Math.floor(Math.random()*100);
   const[sayiBir,setSayiBir]=useState();
   const[sayiIki,setSayiIki]=useState();
+  const [data,setData]=useState();
+
+  const bolme=(sayi1:number,sayi2:number)=>{
+    sayi2===0 ? setData('0 a bölme hatası') : setData(sayi1/sayi2); 
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <TextInput value={sayiBir} onChangeText={setSayiBir} placeholder='Sayi Gir...' style={styles.giris}/> 
@@ -32,12 +40,13 @@ export default function App() {
         <Text style={styles.karakter}>*</Text>
       </TouchableOpacity>
     
-      <TouchableOpacity onPress={()=>console.log(Number(sayiBir)/Number(sayiIki))} style={styles.buton}>
+      <TouchableOpacity onPress={()=>bolme(Number(sayiBir),Number(sayiIki))} style={styles.buton}>
         <Text style={styles.karakter}>/</Text>
       </TouchableOpacity>
       <Text>Rastgele Sayi:{randomSayi}</Text>
       <View><Text>{deneme(5)}</Text></View>
       <View><Text>{kosullar(-3)}</Text></View>
+      <Text>{data}</Text>
     </SafeAreaView>
   );
 }
